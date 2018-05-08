@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config-server
