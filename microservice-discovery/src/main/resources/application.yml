@@ -1,0 +1,33 @@
+---
+spring:
+  profiles: peer1
+  application:
+    name: service-discovery
+server:
+  port: 8761
+eureka:
+  environment: dev
+  datacenter: local
+  instance:
+    hostname: peer1
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8762/eureka
+
+---
+spring:
+  profiles: peer2
+  application:
+    name: service-discovery
+server:
+  port: 8762
+eureka:
+  environment: dev
+  datacenter: local
+  instance:
+    hostname: peer2
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka
