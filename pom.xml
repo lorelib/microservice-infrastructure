@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>com.lorelib.commons</groupId>
+    <artifactId>commons-dependencies</artifactId>
+    <version>1.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.lorelib.microservice</groupId>
+  <artifactId>microservice-infrastructure</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>microservice-discovery</module>
+    <module>microservice-config-server</module>
+    <module>microservice-gateway</module>
+  </modules>
+
+  <properties>
+    <project.encoding>UTF-8</project.encoding>
+    <project.jdk.version>1.8</project.jdk.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <!-- 编译插件 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${project.jdk.version}</source>
+          <target>${project.jdk.version}</target>
+          <fork>true</fork>
+          <encoding>${project.encoding}</encoding>
+        </configuration>
+      </plugin>
+      <!-- spring boot插件 -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <!-- clean插件 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>aliyun-repo</id>
+      <name>aliyun maven</name>
+      <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+    </repository>
+    <repository>
+      <id>aliyun-repo2</id>
+      <name>aliyun maven2</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    </repository>
+    <repository>
+      <id>mvn-repo2</id>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://repo2.maven.org/maven2/</url>
+    </repository>
+  </repositories>
+
+  <developers>
+    <developer>
+      <name>listening</name>
+      <email>893979653@qq.com</email>
+      <url>暂无</url>
+      <roles></roles>
+    </developer>
+  </developers>
+</project>
