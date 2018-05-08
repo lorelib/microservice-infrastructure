@@ -1,0 +1,10 @@
+server:
+  port: 8050
+eureka:
+  instance:
+    hostname: api-gateway
+zuul:
+  routes:
+    project-service:
+      path: /api/project/**
+      service-id: project-service
