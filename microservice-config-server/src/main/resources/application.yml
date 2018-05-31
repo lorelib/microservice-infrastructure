@@ -19,6 +19,7 @@ spring:
         git:
           uri: https://github.com/lorelib/config-repo.git
           default-label: master
+          force-pull: true
   profiles:
     active: git
 eureka:
